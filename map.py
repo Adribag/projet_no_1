@@ -34,11 +34,12 @@ map = [
 
 import os, sys
 
-
+borderMap = "🔳"
+borderMap ="🟫"
 mapIco = "🗺️"
 treeIco = "🏝️"
 waveIco = "🌊"
-borderMap = "🟫"
+mountIco = "🟫"
 sandIco = "🟨"
 waterIco = "🟦"
 florIco = "🟩"
@@ -59,6 +60,26 @@ def printBorderMap():
             map[line][0] = borderMap
             map[line][49] = borderMap
 
+def printMount():  
+    for x in range(1,49):
+        drawMap(1,x,mountIco)
+    for x in range(1,19):
+        drawMap(2,x,mountIco)
+    for x in range(28,49):
+        drawMap(2,x,mountIco)
+    for y in range(3,27):
+        drawMap(y,1,mountIco)
+    for y in range(3,27):
+        drawMap(y,48,mountIco)
+
+    drawMap(3,2,mountIco)
+    drawMap(4,2,mountIco)
+    drawMap(3,3,mountIco)
+
+    drawMap(3,47,mountIco)
+    drawMap(4,47,mountIco)
+    drawMap(3,46,mountIco)
+    
 def printSea():
     for i in range(1,49):
         drawMap(28,i,waterIco)
@@ -210,6 +231,7 @@ def ClearConsole():
 fondMap()
 printSea()
 printSand()
+printMount()
 printRiver()
 printQuests()
 printBorderMap()
