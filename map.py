@@ -159,6 +159,7 @@ def moveplayer():
             startPosY -= 1 
 
             ClearConsole()
+
             drawMap(startPosY +1,startPosX,currentPos)  
             drawMap(startPosY,startPosX,playerIco)
             affichageMap(map) 
@@ -173,7 +174,7 @@ def moveplayer():
             drawMap(startPosY -1,startPosX,currentPos)  
             drawMap(startPosY,startPosX,playerIco)
             affichageMap(map) 
-              
+ 
             currentPos = oldIco
 
         if moving == "Q":
@@ -184,7 +185,7 @@ def moveplayer():
             drawMap(startPosY,startPosX +1,currentPos)  
             drawMap(startPosY,startPosX,playerIco)
             affichageMap(map) 
-              
+ 
             currentPos = oldIco
 
         if moving == "D":
@@ -236,5 +237,6 @@ printRiver()
 printQuests()
 printBorderMap()
 moveplayer()
+
 
 
