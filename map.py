@@ -33,6 +33,8 @@ map = [
     ]
 
 import os, sys
+import tryHud as hud
+
 
 borderMap = "🔳"
 borderMap ="🟫"
@@ -138,14 +140,16 @@ def affichageMap(map,poY = 0,poX = 0):
                 # print(f" valeur de remvove = {remove}")
             # affichePlayer(posY,posX)
    
-
 quest = "start"
 def moveplayer():
 
     startPosY = 25
     startPosX = 45
-    drawMap(startPosY,startPosX,playerIco) 
+    drawMap(startPosY,startPosX,playerIco)
+    # hud.printHudTop()
     affichageMap(map)
+    # hud.printHudSep()
+    # hud.printHudBot()
     # affichePlayer(startPosY,startPosX)
     currentPos = sandIco
     while quest != "end":
@@ -159,10 +163,12 @@ def moveplayer():
             startPosY -= 1 
 
             ClearConsole()
-
+            # hud.printHudTop()
             drawMap(startPosY +1,startPosX,currentPos)  
             drawMap(startPosY,startPosX,playerIco)
             affichageMap(map) 
+            # hud.printHudSep()
+            # hud.printHudBot()
 
             currentPos = oldIco
             
@@ -206,6 +212,8 @@ def moveplayer():
             question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
             if(question == "O"):
                 print("Tu lance la quete")
+                import nbrmystere as nbrM
+                nbrM.nbrMyst()
             else:
                 print("Passe ton chemin")
         
