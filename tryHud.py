@@ -1,10 +1,10 @@
 import os, sys
 
-
-borderHud = "⚪"
+borderIco = ""
+borderHud = "■"
 Prefix = "\x1b["
 Position_Suffix = "H"
-barreh = "─"
+barrehori = "─"
 barrev = "│"
 hg = "┌"
 hd = "┐"
@@ -100,6 +100,14 @@ def printHudBot():
     
 def printPos(Y,X,icon):
      Position = f"{Prefix}{Y};{X}{Position_Suffix}"
-     print(f"{Position}{icon}")
+     print(f"{Position}{icon} ", end="")
 
 
+def printHud():
+
+    for i in range (55,100):
+        printPos(1,i,borderHud)
+    for i in range (1,50):
+            printPos(i,55,borderHud)
+
+printHud()

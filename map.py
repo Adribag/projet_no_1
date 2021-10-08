@@ -33,10 +33,10 @@ map = [
     ]
 
 import os, sys
-import tryHud as hud
+# import tryHud as hud
 
 
-borderMap = "🔳"
+borderIco = "🔳"
 borderMap ="🟫"
 mapIco = "🗺️"
 treeIco = "🏝️"
@@ -46,9 +46,17 @@ sandIco = "🟨"
 waterIco = "🟦"
 florIco = "🟩"
 questIco = "🟪"
+playIco = "🟧"
 palmTreeIco = "🌴"
 playerIco = "👨"
-
+barrehori = "─"
+titre = "L'île au Python"
+eat = "Nourriture"
+energy = "Energie"
+water = "Soif"
+eating = "🟥"
+stamina = "🟧"
+drinking = "🟦"
 
 def drawMap(posY,posX,symb):
     map[posY][posX] = symb
@@ -69,10 +77,12 @@ def printMount():
         drawMap(2,x,mountIco)
     for x in range(28,49):
         drawMap(2,x,mountIco)
-    for y in range(3,27):
+    for y in range(3,29):
         drawMap(y,1,mountIco)
     for y in range(3,27):
         drawMap(y,48,mountIco)
+    
+    
 
     drawMap(3,2,mountIco)
     drawMap(4,2,mountIco)
@@ -110,7 +120,8 @@ def printSand():
         drawMap(25,i,sandIco)
     for i in range(30,49):
         drawMap(24,i,sandIco)
-    
+    # drawMap(25,45,sandIco)
+
 def printQuests():
     # Première quete
     drawMap(25,27,questIco)
@@ -126,32 +137,69 @@ def fondMap():
         for j in range(len(map[i])):
             map[i][j] = florIco
 
+
+Prefix = "\x1b["
+Position_Suffix = "H"
+
+# Position = f"{Prefix}{Y};{X}{Position_Suffix}"
+#      print(f"{Position}{icon} ", end="")
+
+
+
 def affichageMap(map,poY = 0,poX = 0):
     
     for poY in range(len(map)):
         for poX in range(len(map[poY])):
             if(poX == 0):
                 print()
-            # map[i][j] = florIco
-            
-            # if posY != 0 and posX != 0:              
-            print(map[poY][poX], end ="")
+            Position = f"{Prefix}{poY};{poX}{Position_Suffix}"
+            print(f"{Position}{map[poY][poX]}")    
+
+            # print(map[poY][poX], end ="")
             
                 # print(f" valeur de remvove = {remove}")
-            # affichePlayer(posY,posX)
-   
+
+def printPos(Y,X,icon):
+    Position = f"{Prefix}{Y};{X}{Position_Suffix}"
+    print(f"{Position}{icon} ", end="")     
+
+def printHud():
+    printPos(2,68,titre)
+    printPos(4,57,eat)
+    printPos(4,74,energy)
+    printPos(4,90,water)
+
+
+    for i in range(51,100):
+        printPos(3,i,barrehori)
+    for i in range(51,100):
+        printPos(10,i,barrehori)
+
+
+    for i in range (1,30):             
+        printPos(i,50,borderIco)
+    for i in range(50,100):
+        printPos(1,i,borderIco)
+    for i in range(50,100):
+        printPos(29,i,borderIco)
+    for i in range (1,30):             
+        printPos(i,100,borderIco)
+    
+
 quest = "start"
 def moveplayer():
 
     startPosY = 25
     startPosX = 45
-    drawMap(startPosY,startPosX,playerIco)
-    # hud.printHudTop()
-    affichageMap(map)
-    # hud.printHudSep()
-    # hud.printHudBot()
-    # affichePlayer(startPosY,startPosX)
     currentPos = sandIco
+    ClearConsole()
+    
+    drawMap(startPosY,startPosX,playIco)
+    affichageMap(map)
+    printHud()
+
+    # affichePlayer(startPosY,startPosX)
+    
     while quest != "end":
 
         moving = input("Vers quelle direction aller : ").upper()
@@ -165,8 +213,9 @@ def moveplayer():
             ClearConsole()
             # hud.printHudTop()
             drawMap(startPosY +1,startPosX,currentPos)  
-            drawMap(startPosY,startPosX,playerIco)
+            drawMap(startPosY,startPosX,playIco)
             affichageMap(map) 
+            printHud()
             # hud.printHudSep()
             # hud.printHudBot()
 
@@ -178,9 +227,9 @@ def moveplayer():
 
             ClearConsole()
             drawMap(startPosY -1,startPosX,currentPos)  
-            drawMap(startPosY,startPosX,playerIco)
+            drawMap(startPosY,startPosX,playIco)
             affichageMap(map) 
- 
+            printHud()
             currentPos = oldIco
 
         if moving == "Q":
@@ -189,9 +238,9 @@ def moveplayer():
 
             ClearConsole()
             drawMap(startPosY,startPosX +1,currentPos)  
-            drawMap(startPosY,startPosX,playerIco)
+            drawMap(startPosY,startPosX,playIco)
             affichageMap(map) 
- 
+            printHud()
             currentPos = oldIco
 
         if moving == "D":
@@ -201,9 +250,9 @@ def moveplayer():
 
             ClearConsole()
             drawMap(startPosY,startPosX -1,currentPos)  
-            drawMap(startPosY,startPosX,playerIco)
+            drawMap(startPosY,startPosX,playIco)
             affichageMap(map) 
-              
+            printHud()  
             currentPos = oldIco
         
         if(startPosY == 25 and startPosX == 27):
@@ -244,7 +293,5 @@ printMount()
 printRiver()
 printQuests()
 printBorderMap()
+
 moveplayer()
-
-
-
