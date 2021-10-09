@@ -75,7 +75,7 @@ def nbrMyst():
                 takeResponse = int(input("Trouve le deuxieme nombre : "))
 
                 if(nbrMyst2 == takeResponse):
-                    print("Bravo tu as trouvé le premier nombre")
+                    print("Bravo tu as trouvé le deuxieme nombre")
                     countResponse += 1
                     nbrMyst2 = response
                     break
@@ -115,7 +115,7 @@ def nbrMyst():
                 takeResponse = int(input("Trouve le troisieme nombre : "))
 
                 if(nbrMyst3 == takeResponse):
-                    print("Bravo tu as trouvé le premier nombre")
+                    print("Bravo tu as trouvé le troisieme nombre")
                     countResponse += 1
                     nbrMyst3 = response
                     break

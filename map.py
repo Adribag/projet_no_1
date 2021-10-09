@@ -47,6 +47,8 @@ waterIco = "🟦"
 florIco = "🟩"
 questIco = "🟪"
 playIco = "🟧"
+survieWaterIco = "⬜"
+surcieFoodIco = "🟥"
 palmTreeIco = "🌴"
 playerIco = "👨"
 barrehori = "─"
@@ -54,9 +56,30 @@ titre = "L'île au Python"
 eat = "Nourriture"
 energy = "Energie"
 water = "Soif"
-eating = "🟥"
-stamina = "🟧"
-drinking = "🟦"
+iconSurvie = "■"
+stamina = "■"
+drinking = "■"
+
+
+Position_Suffix = "H"
+Prefix = "\x1b["
+Style_Suffix = "m"
+Reset = "0"
+red = "1"
+green = "2"
+blue = "4"
+FG_Prefix = "3"
+
+eatingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+staminaList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+drinkingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+
+def printBar(y,x,list,icon,color):
+    for i in range(len(list)):
+        # print(icon)
+        Position = f"{Prefix}{y};{x}{Position_Suffix}"
+        x += 1
+        print(f"{Position}{Prefix}{FG_Prefix}{color}{Style_Suffix}{icon}{Prefix}{Reset}{Style_Suffix}")
 
 def drawMap(posY,posX,symb):
     map[posY][posX] = symb
@@ -138,13 +161,8 @@ def fondMap():
             map[i][j] = florIco
 
 
-Prefix = "\x1b["
-Position_Suffix = "H"
-
 # Position = f"{Prefix}{Y};{X}{Position_Suffix}"
 #      print(f"{Position}{icon} ", end="")
-
-
 
 def affichageMap(map,poY = 0,poX = 0):
     
@@ -164,26 +182,29 @@ def printPos(Y,X,icon):
     print(f"{Position}{icon} ", end="")     
 
 def printHud():
-    printPos(2,68,titre)
-    printPos(4,57,eat)
-    printPos(4,74,energy)
-    printPos(4,90,water)
+    printPos(2,73,titre)
+    printPos(4,55,eat)
+    printPos(8,55,energy)
+    printPos(12,55,water)
 
+    printBar(5,56,eatingList,iconSurvie,red)
+    printBar(9,56,staminaList,iconSurvie,green)
+    printBar(13,56,drinkingList,iconSurvie,blue)
 
-    for i in range(51,100):
+    for i in range(51,110):
         printPos(3,i,barrehori)
-    for i in range(51,100):
-        printPos(10,i,barrehori)
+    for i in range(51,110):
+        printPos(16,i,barrehori)
 
 
     for i in range (1,30):             
         printPos(i,50,borderIco)
-    for i in range(50,100):
+    for i in range(50,110):
         printPos(1,i,borderIco)
-    for i in range(50,100):
+    for i in range(50,110):
         printPos(29,i,borderIco)
     for i in range (1,30):             
-        printPos(i,100,borderIco)
+        printPos(i,110,borderIco)
     
 
 quest = "start"
@@ -195,6 +216,8 @@ def moveplayer():
     ClearConsole()
     
     drawMap(startPosY,startPosX,playIco)
+    drawMap(26,46,surcieFoodIco)
+    drawMap(26,40,survieWaterIco)
     affichageMap(map)
     printHud()
 
