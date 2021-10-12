@@ -48,18 +48,21 @@ florIco = "🟩"
 questIco = "🟪"
 playIco = "🟧"
 survieWaterIco = "⬜"
-surcieFoodIco = "🟥"
+survieFoodIco = "🟥"
 palmTreeIco = "🌴"
 playerIco = "👨"
-barrehori = "─"
+barrehori = "═"
+barreverti = "║"
 titre = "L'île au Python"
 eat = "Nourriture"
 energy = "Energie"
 water = "Soif"
+inventory = "Inventaire"
 iconSurvie = "■"
 stamina = "■"
 drinking = "■"
-
+inventoWater = "Réserve d'eau"
+inventoFood = "Réserve de nourriture"
 
 Position_Suffix = "H"
 Prefix = "\x1b["
@@ -73,6 +76,17 @@ FG_Prefix = "3"
 eatingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 staminaList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 drinkingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+
+inventoryFood = [0,0]
+inventoryFoodBack = [0,1,2,3,4,5,6,7,8,9]
+inventoryWater = [0,0,0,0]
+
+def printRessources(y,x,list,icon):   
+    for i in range(len(list)):
+        Position = f"{Prefix}{y};{x}{Position_Suffix}"
+        x += 1
+        print(f"{Position}{icon}")
+        
 
 def printBar(y,x,list,icon,color):
     for i in range(len(list)):
@@ -182,14 +196,24 @@ def printPos(Y,X,icon):
     print(f"{Position}{icon} ", end="")     
 
 def printHud():
-    printPos(2,73,titre)
+    printPos(1,73,titre)
     printPos(4,55,eat)
     printPos(8,55,energy)
     printPos(12,55,water)
+    printPos(17,75,inventory)
+    printPos(19,55,inventoWater)
+    printPos(23,55,inventoFood)
 
     printBar(5,56,eatingList,iconSurvie,red)
     printBar(9,56,staminaList,iconSurvie,green)
     printBar(13,56,drinkingList,iconSurvie,blue)
+
+    printRessources(21,56,inventoryFoodBack,survieWaterIco)
+    printRessources(21,56,inventoryWater,waterIco)
+    printRessources(25,56,inventoryFoodBack,survieWaterIco)
+    printRessources(25,56,inventoryFood,survieFoodIco)
+    
+
 
     for i in range(51,110):
         printPos(3,i,barrehori)
@@ -199,13 +223,40 @@ def printHud():
 
     for i in range (1,30):             
         printPos(i,50,borderIco)
-    for i in range(50,110):
-        printPos(1,i,borderIco)
-    for i in range(50,110):
-        printPos(29,i,borderIco)
-    for i in range (1,30):             
-        printPos(i,110,borderIco)
+    # for i in range(50,110):
+    #     printPos(1,i,borderIco)
+    # for i in range(50,110):
+    #     printPos(29,i,borderIco)
+    # for i in range (1,30):             
+    #     printPos(i,110,borderIco)
+
+    for i in range (1,160):             
+        printPos(30,i,borderIco)
+    # for i in range (31,36):             
+    #     printPos(i,1,borderIco) 
+    # for i in range (31,36):             
+    #     printPos(i,159,borderIco)
+
+    for i in range (31,35):
+        printPos(i,23,barreverti) 
+    for i in range (31,35):
+        printPos(i,54,barreverti)  
+    for i in range (31,35):
+        printPos(i,94,barreverti)  
+    for i in range (1,160):             
+        printPos(34,i,barrehori)
+    for i in range (1,160):             
+        printPos(36,i,barrehori)
+
+def delRessource():
+    del eatingList[-1]
+    del drinkingList[-1]
+    del staminaList[-1]
+    del staminaList[-1]
     
+def spleeping():
+    pass  
+
 
 quest = "start"
 def moveplayer():
@@ -213,11 +264,13 @@ def moveplayer():
     startPosY = 25
     startPosX = 45
     currentPos = sandIco
+    moveCounter = 0
     ClearConsole()
     
     drawMap(startPosY,startPosX,playIco)
-    drawMap(26,46,surcieFoodIco)
-    drawMap(26,40,survieWaterIco)
+    drawMap(26,46,survieFoodIco)
+    drawMap(22,40,waterIco)
+    drawMap(20,45,mountIco)
     affichageMap(map)
     printHud()
 
@@ -225,59 +278,181 @@ def moveplayer():
     
     while quest != "end":
 
-        moving = input("Vers quelle direction aller : ").upper()
+        moving = input("Que faire ? : ").upper()
         print()
         print(moving) 
 
         if moving == "Z":  
-            oldIco = map[startPosY-1][startPosX]
-            startPosY -= 1 
+            if len(staminaList) < 5:
+                print("Tu dois te reposer !")
+            elif len(eatingList) < 2:
+                print("Tu dois manger !")
+            elif len(drinkingList) < 2:
+                print("Tu dois boire !")
+            else :
+                oldIco = map[startPosY-1][startPosX]
+                startPosY -= 1 
+                moveCounter +=1
+                ClearConsole()
+                # hud.printHudTop()
+                
+                drawMap(startPosY +1,startPosX,currentPos)  
+                drawMap(startPosY,startPosX,playIco)
+                affichageMap(map)
+                delRessource() 
+                if(moveCounter%2 == 0):
+                    del staminaList[-1]
+                afficheDep = f"Nombre de déplacements : {moveCounter}"
+                printPos(32,26,afficheDep)
+                posXY = f"X = {startPosX} | Y = {startPosY}"
+                printPos(32,5,posXY)
 
-            ClearConsole()
-            # hud.printHudTop()
-            drawMap(startPosY +1,startPosX,currentPos)  
-            drawMap(startPosY,startPosX,playIco)
-            affichageMap(map) 
-            printHud()
-            # hud.printHudSep()
-            # hud.printHudBot()
+                printHud()
+                currentPos = oldIco
+                oncase = f"Tu es sur la case {currentPos}"
+                printPos(35,135,oncase)
 
-            currentPos = oldIco
             
-        if moving == "S":
-            oldIco = map[startPosY+1][startPosX]
-            startPosY += 1 
 
-            ClearConsole()
-            drawMap(startPosY -1,startPosX,currentPos)  
-            drawMap(startPosY,startPosX,playIco)
-            affichageMap(map) 
-            printHud()
-            currentPos = oldIco
+        if moving == "S":
+            if len(staminaList) < 5:
+                print("Tu dois te reposer !")
+            elif len(eatingList) < 2:
+                print("Tu dois manger !")
+            elif len(drinkingList) < 2:
+                print("Tu dois boire !")
+            else:
+                oldIco = map[startPosY+1][startPosX]
+                startPosY += 1 
+                moveCounter +=1
+                ClearConsole()
+                drawMap(startPosY -1,startPosX,currentPos)  
+                drawMap(startPosY,startPosX,playIco)
+                affichageMap(map) 
+                delRessource() 
+                if(moveCounter%2 == 0):
+                    del staminaList[-1]
+                afficheDep = f"Nombre de déplacements : {moveCounter}"
+                printPos(32,26,afficheDep)
+                posXY = f"X = {startPosX} | Y = {startPosY}"
+                printPos(32,5,posXY)
+
+                printHud()
+                currentPos = oldIco
+                oncase = f"Tu es sur la case {currentPos}"
+                printPos(35,135,oncase)
 
         if moving == "Q":
-            oldIco = map[startPosY][startPosX-1]
-            startPosX -= 1 
+            if len(staminaList) < 5:
+                print("Tu dois te reposer !")
+            elif len(eatingList) < 2:
+                print("Tu dois manger !")
+            elif len(drinkingList) < 2:
+                print("Tu dois boire !")
+            else:
+                oldIco = map[startPosY][startPosX-1]
+                startPosX -= 1 
+                moveCounter +=1
+                ClearConsole()
+                drawMap(startPosY,startPosX +1,currentPos)  
+                drawMap(startPosY,startPosX,playIco)
+                affichageMap(map) 
+                delRessource() 
+                if(moveCounter%2 == 0):
+                    del staminaList[-1]
+                afficheDep = f"Nombre de déplacements : {moveCounter}"
+                printPos(32,26,afficheDep)
+                posXY = f"X = {startPosX} | Y = {startPosY}"
+                printPos(32,5,posXY)
 
-            ClearConsole()
-            drawMap(startPosY,startPosX +1,currentPos)  
-            drawMap(startPosY,startPosX,playIco)
-            affichageMap(map) 
-            printHud()
-            currentPos = oldIco
+                printHud()
+                currentPos = oldIco
+                oncase = f"Tu es sur la case {currentPos}"
+                printPos(35,135,oncase)
 
         if moving == "D":
+            if len(staminaList) < 5:
+                print("Tu dois te reposer !")
+            elif len(eatingList) < 2:
+                print("Tu dois manger !")
+            elif len(drinkingList) < 2:
+                print("Tu dois boire !")
+            else:
+                oldIco = map[startPosY][startPosX+1]
+                startPosX += 1 
+                moveCounter +=1
+                ClearConsole()
+                drawMap(startPosY,startPosX -1,currentPos)  
+                drawMap(startPosY,startPosX,playIco)
+                affichageMap(map) 
+                delRessource() 
+                if(moveCounter%2 == 0):
+                    del staminaList[-1]
+                afficheDep = f"Nombre de déplacements : {moveCounter}"
+                printPos(32,26,afficheDep)
+                posXY = f"X = {startPosX} | Y = {startPosY}"
+                printPos(32,5,posXY)
 
-            oldIco = map[startPosY][startPosX+1]
-            startPosX += 1 
+                printHud()
+                currentPos = oldIco
+                oncase = f"Tu es sur la case {currentPos}"
+                printPos(35,135,oncase)
 
-            ClearConsole()
-            drawMap(startPosY,startPosX -1,currentPos)  
-            drawMap(startPosY,startPosX,playIco)
-            affichageMap(map) 
-            printHud()  
-            currentPos = oldIco
-        
+        if moving == "E":           
+            if currentPos == survieFoodIco:
+                if len(inventoryFood) > 9:
+                    print("Tu n'as plus de places pour cette nourriture")
+                else:
+                    print("Tu ramasse de la nourriture !")
+                    inventoryFood.extend([0])               
+                    printHud() 
+                    currentPos = survieWaterIco
+                    affichageMap(map)
+            elif currentPos == waterIco:
+                if len(inventoryWater) > 9:
+                    print("Tu n'as plus de places pour cette eau")
+                else:
+                    print("Tu prends de l'eau !")
+                    inventoryWater.extend([0])
+                    printHud()
+                    currentPos = survieWaterIco
+                    affichageMap(map)
+            else:
+                print("Il n'y a rien à ramasser...")
+
+        if moving == "C":
+            print("Tu te repose...")
+            lenStamina = len(staminaList)
+            reloadStamina = 50 - lenStamina
+            for i in range(reloadStamina):
+                staminaList.extend([0])
+                printHud()
+
+        if moving == "B":
+            if inventoryWater == []:
+                print("Tu ne peux pas boire")
+            else:
+                if len(drinkingList) > 45:
+                    print("Tu n'as pas soif...")
+                else:
+                    del inventoryWater[-1]
+                    drinkingList.extend([0,0,0,0,0])
+                    printHud() 
+                    print("Tu bois !")
+
+        if moving == "M":
+            # print("Tu manges !")
+            if inventoryFood == []:
+                print("Tu ne peux pas manger")
+            else:
+                if len(eatingList) > 45:
+                    print("Tu n'as pas faim...")
+                else:
+                    del inventoryFood[-1]
+                    eatingList.extend([0,0,0,0,0])
+                    printHud() 
+                    print("Tu manges !")
+
         if(startPosY == 25 and startPosX == 27):
             print()
             print("Tu es sur la première quete")
@@ -288,9 +463,15 @@ def moveplayer():
                 nbrM.nbrMyst()
             else:
                 print("Passe ton chemin")
+
         
-        print()
-        print(f"X = {startPosX} | Y = {startPosY}")
+
+
+        commande = f"Déplacement -> Z Q S D ; Rammasser -> E ; Dormir -> C ; Boire -> B ; Manger -> M"
+        printPos(35,2,commande)
+        cursor = ""
+        printPos(37,2,cursor)
+        
 
 def ClearConsole():
     """
@@ -318,3 +499,4 @@ printQuests()
 printBorderMap()
 
 moveplayer()
+printHud()
