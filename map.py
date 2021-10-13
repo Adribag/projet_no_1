@@ -34,6 +34,7 @@ map = [
 
 import os, sys
 # import tryHud as hud
+import random
 
 
 borderIco = "🔳"
@@ -86,7 +87,18 @@ def printRessources(y,x,list,icon):
         Position = f"{Prefix}{y};{x}{Position_Suffix}"
         x += 1
         print(f"{Position}{icon}")
+    
         
+
+def randomSurvie():
+    for i in range(0,40):
+        randY = random.randint(5,27)
+        randX = random.randint(5,45)
+        drawMap(randY,randX,survieFoodIco)
+    for i in range(0,40):
+        randY = random.randint(5,27)
+        randX = random.randint(5,45)
+        drawMap(randY,randX,waterIco)
 
 def printBar(y,x,list,icon,color):
     for i in range(len(list)):
@@ -289,10 +301,11 @@ def moveplayer():
                 print("Tu dois manger !")
             elif len(drinkingList) < 2:
                 print("Tu dois boire !")
-            else :
+            else:
+                
                 oldIco = map[startPosY-1][startPosX]
                 startPosY -= 1 
-                moveCounter +=1
+                moveCounter += 1
                 ClearConsole()
                 # hud.printHudTop()
                 
@@ -424,9 +437,35 @@ def moveplayer():
             print("Tu te repose...")
             lenStamina = len(staminaList)
             reloadStamina = 50 - lenStamina
+            countStam = 0
+            
             for i in range(reloadStamina):
+                countStam += 1 
+                
+                if countStam % 6 == 0:
+                    print(countStam)
+                    del drinkingList[-1]
+                    del drinkingList[-1]
+                    del eatingList[-1]
+                    ClearConsole()
+                    affichageMap(map)
+                if len(eatingList) < 2:
+                    
+                    affichageMap(map)
+                    printHud()
+                    print("Tu dois manger !")
+                    break
+                elif len(drinkingList) < 2:
+                    affichageMap(map)
+                    printHud()
+                    print("Tu dois boire !")
+                    break
+                       
                 staminaList.extend([0])
+                
                 printHud()
+             
+                
 
         if moving == "B":
             if inventoryWater == []:
@@ -491,6 +530,7 @@ def ClearConsole():
 
 # affichageMap(map)
 fondMap()
+randomSurvie()
 printSea()
 printSand()
 printMount()
@@ -499,4 +539,4 @@ printQuests()
 printBorderMap()
 
 moveplayer()
-printHud()
+# printHud()
