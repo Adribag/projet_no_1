@@ -1,0 +1,62 @@
+[
+    {
+        "name" : "Chef Singe",
+        "type" : "Chef",
+        "minChance" : 50,
+        "maxChance" : 80
+    },
+    {
+        "name" : "Singe 1",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 2",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 3",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 4",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 5",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 6",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 7",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 8",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    },
+    {
+        "name" : "Singe 9",
+        "type" : "Singe",
+        "minChance" : 10,
+        "maxChance" : 70
+    }
+]
