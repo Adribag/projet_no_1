@@ -1,4 +1,4 @@
-import random
+# import random
 
 import variables as var
 import function as func
@@ -10,24 +10,11 @@ def printRessources(y,x,list,icon):
         x += 1
         print(f"{Position}{icon}")       
 
-def randomSurvie():
-    for i in range(0,40):
-        randY = random.randint(5,27)
-        randX = random.randint(5,45)
-        drawMap(randY,randX,var.survieFoodIco)
-    for i in range(0,40):
-        randY = random.randint(5,27)
-        randX = random.randint(5,45)
-        drawMap(randY,randX,var.waterIco)
-
 def printBar(y,x,list,icon,color):
     for i in range(len(list)):
         Position = f"{var.prefix}{y};{x}{var.positionSuffix}"
         x += 1
         print(f"{Position}{var.prefix}{var.fgPrefix}{color}{var.styleSuffix}{icon}{var.prefix}{var.reset}{var.styleSuffix}")
-
-def drawMap(posY,posX,symb):
-    var.map[posY][posX] = symb
 
 def printBorderMap():
     for line in range (len(var.map)):
@@ -38,64 +25,79 @@ def printBorderMap():
             var.map[line][0] = var.borderMap
             var.map[line][49] = var.borderMap
 
-def printMount():  
+def printMount():
+    """
+        Affiche la montagne et le contour de la map -> mountIco
+    """  
     for x in range(1,49):
-        drawMap(1,x,var.mountIco)
+        func.drawMap(var.map,1,x,var.mountIco)
     for x in range(1,19):
-        drawMap(2,x,var.mountIco)
+        func.drawMap(var.map,2,x,var.mountIco)
     for x in range(28,49):
-        drawMap(2,x,var.mountIco)
+        func.drawMap(var.map,2,x,var.mountIco)
     for y in range(3,29):
-        drawMap(y,1,var.mountIco)
+        func.drawMap(var.map,y,1,var.mountIco)
     for y in range(3,27):
-        drawMap(y,48,var.mountIco)
+        func.drawMap(var.map,y,48,var.mountIco)
     
-    drawMap(3,2,var.mountIco)
-    drawMap(4,2,var.mountIco)
-    drawMap(3,3,var.mountIco)
+    func.drawMap(var.map,3,2,var.mountIco)
+    func.drawMap(var.map,4,2,var.mountIco)
+    func.drawMap(var.map,3,3,var.mountIco)
 
-    drawMap(3,47,var.mountIco)
-    drawMap(4,47,var.mountIco)
-    drawMap(3,46,var.mountIco)
+    func.drawMap(var.map,3,47,var.mountIco)
+    func.drawMap(var.map,4,47,var.mountIco)
+    func.drawMap(var.map,3,46,var.mountIco)
     
 def printSea():
+    """
+        Affiche la mer -> waterIco
+    """
     for i in range(1,49):
-        drawMap(28,i,var.waterIco)
-        drawMap(27,i,var.waterIco)
+        func.drawMap(var.map,28,i,var.waterIco)
+        func.drawMap(var.map,27,i,var.waterIco)
 
 def printRiver():
+    """
+        Affiche la rivière -> waterIco
+    """
     for x in range(21,26):
         for y in range(20,27):
-            drawMap(y,x,var.waterIco)
+            func.drawMap(var.map,y,x,var.waterIco)
     for x in range(20,24):
         for y in range(14,20):
-            drawMap(y,x,var.waterIco)
+            func.drawMap(var.map,y,x,var.waterIco)
     for x in range(19,22):
         for y in range(8,14):
-            drawMap(y,x,var.waterIco)
+            func.drawMap(var.map,y,x,var.waterIco)
     for x in range(18,20):
         for y in range(5,8):
-            drawMap(y,x,var.waterIco)
+            func.drawMap(var.map,y,x,var.waterIco)
     for x in range(18,19):
         for y in range(1,5):
-            drawMap(y,x,var.waterIco)
+            func.drawMap(var.map,y,x,var.waterIco)
 
 def printSand():
+    """
+        Affiche la plage -> sandIco
+    """
     for i in range(1,49):
-        drawMap(26,i,var.sandIco)
-        drawMap(25,i,var.sandIco)
+        func.drawMap(var.map,26,i,var.sandIco)
+        func.drawMap(var.map,25,i,var.sandIco)
     for i in range(30,49):
-        drawMap(24,i,var.sandIco)
+        func.drawMap(var.map,24,i,var.sandIco)
 
 def printQuests():
+    """
+        Affiche l'emplacement des quetes -> questIco
+    """
     # Première quete
-    drawMap(25,27,var.questIco)
+    func.drawMap(var.map,25,27,var.questIco)
     # Deuxieme quete
-    drawMap(10,48,var.questIco)
+    func.drawMap(var.map,10,48,var.questIco)
     # Troisieme quete
-    drawMap(20,10,var.questIco)
+    func.drawMap(var.map,20,10,var.questIco)
     # Porte finale
-    drawMap(1,20,var.questIco)
+    func.drawMap(var.map,1,20,var.questIco)
 
 def fondMap():
     """
@@ -186,10 +188,10 @@ def moveplayer():
     moveCounter = 0
     func.clearConsole()
     
-    drawMap(startPosY,startPosX,var.playIco)
-    drawMap(26,46,var.survieFoodIco)
-    drawMap(22,40,var.waterIco)
-    drawMap(20,45,var.mountIco)
+    func.drawMap(var.map,startPosY,startPosX,var.playIco)
+    func.drawMap(var.map,26,46,var.survieFoodIco)
+    func.drawMap(var.map,22,40,var.waterIco)
+    func.drawMap(var.map,20,45,var.mountIco)
     affichageMap(var.map)
     printHud()
     
@@ -214,8 +216,8 @@ def moveplayer():
                 func.clearConsole()
                 # hud.printHudTop()
                 
-                drawMap(startPosY +1,startPosX,currentPos)  
-                drawMap(startPosY,startPosX,var.playIco)
+                func.drawMap(var.map,startPosY +1,startPosX,currentPos)  
+                func.drawMap(var.map,startPosY,startPosX,var.playIco)
                 affichageMap(var.map)
                 delRessource() 
                 if(moveCounter%2 == 0):
@@ -242,8 +244,8 @@ def moveplayer():
                 startPosY += 1 
                 moveCounter +=1
                 func.clearConsole()
-                drawMap(startPosY -1,startPosX,currentPos)  
-                drawMap(startPosY,startPosX,var.playIco)
+                func.drawMap(var.map,startPosY -1,startPosX,currentPos)  
+                func.drawMap(var.map,startPosY,startPosX,var.playIco)
                 affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
@@ -270,8 +272,8 @@ def moveplayer():
                 startPosX -= 1 
                 moveCounter +=1
                 func.clearConsole()
-                drawMap(startPosY,startPosX +1,currentPos)  
-                drawMap(startPosY,startPosX,var.playIco)
+                func.drawMap(var.map,startPosY,startPosX +1,currentPos)  
+                func.drawMap(var.map,startPosY,startPosX,var.playIco)
                 affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
@@ -298,8 +300,8 @@ def moveplayer():
                 startPosX += 1 
                 moveCounter +=1
                 func.clearConsole()
-                drawMap(startPosY,startPosX -1,currentPos)  
-                drawMap(startPosY,startPosX,var.playIco)
+                func.drawMap(var.map,startPosY,startPosX -1,currentPos)  
+                func.drawMap(var.map,startPosY,startPosX,var.playIco)
                 affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
@@ -421,7 +423,7 @@ def moveplayer():
         
 
 fondMap()
-randomSurvie()
+func.randomSurvie(var.map,var.survieFoodIco,var.waterIco)
 printSea()
 printSand()
 printMount()

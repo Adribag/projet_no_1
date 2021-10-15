@@ -2,5 +2,7 @@
     "name" : "Adri",
     "type" : "player",
     "minChance" : 80,
-    "maxChance" : 90
+    "maxChance" : 90,
+    "startY" : 25,
+    "startX" : 45
 }
