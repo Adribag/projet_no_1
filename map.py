@@ -1,47 +1,47 @@
-map = [
-    # [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-    [0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49]
-    ]
+# map = [
+#     # [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+#     [0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+#     [0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49]
+#     ]
 
-import os, sys
+# import os, sys
 # import tryHud as hud
 import random
+
+import variables as var
+import function as func
 
 
 borderIco = "🔳"
 borderMap ="🟫"
-mapIco = "🗺️"
-treeIco = "🏝️"
-waveIco = "🌊"
 mountIco = "🟫"
 sandIco = "🟨"
 waterIco = "🟦"
@@ -50,29 +50,26 @@ questIco = "🟪"
 playIco = "🟧"
 survieWaterIco = "⬜"
 survieFoodIco = "🟥"
-palmTreeIco = "🌴"
-playerIco = "👨"
+iconSurvie = "■"
 barrehori = "═"
 barreverti = "║"
-titre = "L'île au Python"
-eat = "Nourriture"
-energy = "Energie"
-water = "Soif"
-inventory = "Inventaire"
-iconSurvie = "■"
-stamina = "■"
-drinking = "■"
-inventoWater = "Réserve d'eau"
-inventoFood = "Réserve de nourriture"
+# titre = "L'île au Python"
+# eat = "Nourriture"
+# energy = "Energie"
+# water = "Soif"
+# inventory = "Inventaire"
 
-Position_Suffix = "H"
-Prefix = "\x1b["
-Style_Suffix = "m"
-Reset = "0"
+# inventoWater = "Réserve d'eau"
+# inventoFood = "Réserve de nourriture"
+
+positionSuffix = "H"
+prefix = "\x1b["
+styleSuffix = "m"
+reset = "0"
 red = "1"
 green = "2"
 blue = "4"
-FG_Prefix = "3"
+fgPrefix = "3"
 
 eatingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 staminaList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
@@ -84,7 +81,7 @@ inventoryWater = [0,0,0,0]
 
 def printRessources(y,x,list,icon):   
     for i in range(len(list)):
-        Position = f"{Prefix}{y};{x}{Position_Suffix}"
+        Position = f"{prefix}{y};{x}{positionSuffix}"
         x += 1
         print(f"{Position}{icon}")
     
@@ -103,21 +100,21 @@ def randomSurvie():
 def printBar(y,x,list,icon,color):
     for i in range(len(list)):
         # print(icon)
-        Position = f"{Prefix}{y};{x}{Position_Suffix}"
+        Position = f"{prefix}{y};{x}{positionSuffix}"
         x += 1
-        print(f"{Position}{Prefix}{FG_Prefix}{color}{Style_Suffix}{icon}{Prefix}{Reset}{Style_Suffix}")
+        print(f"{Position}{prefix}{fgPrefix}{color}{styleSuffix}{icon}{prefix}{reset}{styleSuffix}")
 
 def drawMap(posY,posX,symb):
-    map[posY][posX] = symb
+    var.map[posY][posX] = symb
 
 def printBorderMap():
-    for line in range (len(map)):
+    for line in range (len(var.map)):
         if(line == 0 or line == 29):
-            for i in range(len(map[line])):
-                map[line][i] = borderMap
+            for i in range(len(var.map[line])):
+                var.map[line][i] = borderMap
         else:
-            map[line][0] = borderMap
-            map[line][49] = borderMap
+            var.map[line][0] = borderMap
+            var.map[line][49] = borderMap
 
 def printMount():  
     for x in range(1,49):
@@ -182,9 +179,9 @@ def printQuests():
     drawMap(1,20,questIco)
 
 def fondMap():
-    for i in range(len(map)):
-        for j in range(len(map[i])):
-            map[i][j] = florIco
+    for i in range(len(var.map)):
+        for j in range(len(var.map[i])):
+            var.map[i][j] = florIco
 
 
 # Position = f"{Prefix}{Y};{X}{Position_Suffix}"
@@ -196,7 +193,7 @@ def affichageMap(map,poY = 0,poX = 0):
         for poX in range(len(map[poY])):
             if(poX == 0):
                 print()
-            Position = f"{Prefix}{poY};{poX}{Position_Suffix}"
+            Position = f"{prefix}{poY};{poX}{positionSuffix}"
             print(f"{Position}{map[poY][poX]}")    
 
             # print(map[poY][poX], end ="")
@@ -204,17 +201,17 @@ def affichageMap(map,poY = 0,poX = 0):
                 # print(f" valeur de remvove = {remove}")
 
 def printPos(Y,X,icon):
-    Position = f"{Prefix}{Y};{X}{Position_Suffix}"
+    Position = f"{prefix}{Y};{X}{positionSuffix}"
     print(f"{Position}{icon} ", end="")     
 
 def printHud():
-    printPos(1,73,titre)
-    printPos(4,55,eat)
-    printPos(8,55,energy)
-    printPos(12,55,water)
-    printPos(17,75,inventory)
-    printPos(19,55,inventoWater)
-    printPos(23,55,inventoFood)
+    printPos(1,73,var.title)
+    printPos(4,55,var.eat)
+    printPos(8,55,var.energy)
+    printPos(12,55,var.water)
+    printPos(17,75,var.inventory)
+    printPos(19,55,var.inventoWater)
+    printPos(23,55,var.inventoFood)
 
     printBar(5,56,eatingList,iconSurvie,red)
     printBar(9,56,staminaList,iconSurvie,green)
@@ -277,13 +274,13 @@ def moveplayer():
     startPosX = 45
     currentPos = sandIco
     moveCounter = 0
-    ClearConsole()
+    func.clearConsole()
     
     drawMap(startPosY,startPosX,playIco)
     drawMap(26,46,survieFoodIco)
     drawMap(22,40,waterIco)
     drawMap(20,45,mountIco)
-    affichageMap(map)
+    affichageMap(var.map)
     printHud()
 
     # affichePlayer(startPosY,startPosX)
@@ -303,15 +300,15 @@ def moveplayer():
                 print("Tu dois boire !")
             else:
                 
-                oldIco = map[startPosY-1][startPosX]
+                oldIco = var.map[startPosY-1][startPosX]
                 startPosY -= 1 
                 moveCounter += 1
-                ClearConsole()
+                func.clearConsole()
                 # hud.printHudTop()
                 
                 drawMap(startPosY +1,startPosX,currentPos)  
                 drawMap(startPosY,startPosX,playIco)
-                affichageMap(map)
+                affichageMap(var.map)
                 delRessource() 
                 if(moveCounter%2 == 0):
                     del staminaList[-1]
@@ -335,13 +332,13 @@ def moveplayer():
             elif len(drinkingList) < 2:
                 print("Tu dois boire !")
             else:
-                oldIco = map[startPosY+1][startPosX]
+                oldIco = var.map[startPosY+1][startPosX]
                 startPosY += 1 
                 moveCounter +=1
-                ClearConsole()
+                func.clearConsole()
                 drawMap(startPosY -1,startPosX,currentPos)  
                 drawMap(startPosY,startPosX,playIco)
-                affichageMap(map) 
+                affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
                     del staminaList[-1]
@@ -363,13 +360,13 @@ def moveplayer():
             elif len(drinkingList) < 2:
                 print("Tu dois boire !")
             else:
-                oldIco = map[startPosY][startPosX-1]
+                oldIco = var.map[startPosY][startPosX-1]
                 startPosX -= 1 
                 moveCounter +=1
-                ClearConsole()
+                func.clearConsole()
                 drawMap(startPosY,startPosX +1,currentPos)  
                 drawMap(startPosY,startPosX,playIco)
-                affichageMap(map) 
+                affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
                     del staminaList[-1]
@@ -391,13 +388,13 @@ def moveplayer():
             elif len(drinkingList) < 2:
                 print("Tu dois boire !")
             else:
-                oldIco = map[startPosY][startPosX+1]
+                oldIco = var.map[startPosY][startPosX+1]
                 startPosX += 1 
                 moveCounter +=1
-                ClearConsole()
+                func.clearConsole()
                 drawMap(startPosY,startPosX -1,currentPos)  
                 drawMap(startPosY,startPosX,playIco)
-                affichageMap(map) 
+                affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
                     del staminaList[-1]
@@ -416,20 +413,27 @@ def moveplayer():
                 if len(inventoryFood) > 9:
                     print("Tu n'as plus de places pour cette nourriture")
                 else:
+                    func.clearConsole()
                     print("Tu ramasse de la nourriture !")
                     inventoryFood.extend([0])               
-                    printHud() 
+                     
                     currentPos = survieWaterIco
-                    affichageMap(map)
+                    affichageMap(var.map)
+                    printPos(32,5,posXY)
+                    printPos(32,26,afficheDep)
+                    printPos(35,135,oncase)
+                    printHud()
             elif currentPos == waterIco:
                 if len(inventoryWater) > 9:
                     print("Tu n'as plus de places pour cette eau")
                 else:
+                    func.clearConsole()
                     print("Tu prends de l'eau !")
                     inventoryWater.extend([0])
-                    printHud()
+                    
                     currentPos = survieWaterIco
-                    affichageMap(map)
+                    affichageMap(var.map)
+                    printHud()
             else:
                 print("Il n'y a rien à ramasser...")
 
@@ -447,16 +451,16 @@ def moveplayer():
                     del drinkingList[-1]
                     del drinkingList[-1]
                     del eatingList[-1]
-                    ClearConsole()
-                    affichageMap(map)
+                    func.clearConsole()
+                    affichageMap(var.map)
                 if len(eatingList) < 2:
                     
-                    affichageMap(map)
+                    affichageMap(var.map)
                     printHud()
                     print("Tu dois manger !")
                     break
                 elif len(drinkingList) < 2:
-                    affichageMap(map)
+                    affichageMap(var.map)
                     printHud()
                     print("Tu dois boire !")
                     break
@@ -512,17 +516,17 @@ def moveplayer():
         printPos(37,2,cursor)
         
 
-def ClearConsole():
-    """
-        Clear the console depending on OS
-    """
+# def ClearConsole():
+#     """
+#         Clear the console depending on OS
+#     """
 
-    if "win" in sys.platform.lower():
-        # for windows
-        os.system("cls")
-    elif "linux" in sys.platform.lower():
-        # for linux
-        os.system("clear")
+#     if "win" in sys.platform.lower():
+#         # for windows
+#         os.system("cls")
+#     elif "linux" in sys.platform.lower():
+#         # for linux
+#         os.system("clear")
 
 
 
