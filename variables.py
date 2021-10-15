@@ -34,8 +34,41 @@ map = [
     ]
 
 # Variables du jeu
+borderIco = "🔳"
+borderMap ="🟫"
+mountIco = "🟫"
+sandIco = "🟨"
+waterIco = "🟦"
+florIco = "🟩"
+questIco = "🟪"
+playIco = "🟧"
+emptyIco = "⬜"
+survieFoodIco = "🟥"
 
+# Position et Couleurs
+positionSuffix = "H"
+prefix = "\x1b["
+styleSuffix = "m"
+reset = "0"
+red = "1"
+green = "2"
+blue = "4"
+fgPrefix = "3"
 
+# Barres de survie du joueur
+eatingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+staminaList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+drinkingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+
+inventoryFood = [0,0]
+inventoryFoodBack = [0,1,2,3,4,5,6,7,8,9]
+inventoryWater = [0,0,0,0]
+
+iconSurvie = "■"
+
+# Bordures interface
+barrehori = "═"
+barreverti = "║"
 
 # Texte du jeu
 title = "L'île au Python"

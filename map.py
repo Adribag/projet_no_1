@@ -1,108 +1,30 @@
-# map = [
-#     # [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-#     [0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-#     [0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49]
-#     ]
-
-# import os, sys
-# import tryHud as hud
 import random
 
 import variables as var
 import function as func
 
 
-borderIco = "🔳"
-borderMap ="🟫"
-mountIco = "🟫"
-sandIco = "🟨"
-waterIco = "🟦"
-florIco = "🟩"
-questIco = "🟪"
-playIco = "🟧"
-survieWaterIco = "⬜"
-survieFoodIco = "🟥"
-iconSurvie = "■"
-barrehori = "═"
-barreverti = "║"
-# titre = "L'île au Python"
-# eat = "Nourriture"
-# energy = "Energie"
-# water = "Soif"
-# inventory = "Inventaire"
-
-# inventoWater = "Réserve d'eau"
-# inventoFood = "Réserve de nourriture"
-
-positionSuffix = "H"
-prefix = "\x1b["
-styleSuffix = "m"
-reset = "0"
-red = "1"
-green = "2"
-blue = "4"
-fgPrefix = "3"
-
-eatingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-staminaList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-drinkingList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-
-inventoryFood = [0,0]
-inventoryFoodBack = [0,1,2,3,4,5,6,7,8,9]
-inventoryWater = [0,0,0,0]
-
 def printRessources(y,x,list,icon):   
     for i in range(len(list)):
-        Position = f"{prefix}{y};{x}{positionSuffix}"
+        Position = f"{var.prefix}{y};{x}{var.positionSuffix}"
         x += 1
-        print(f"{Position}{icon}")
-    
-        
+        print(f"{Position}{icon}")       
 
 def randomSurvie():
     for i in range(0,40):
         randY = random.randint(5,27)
         randX = random.randint(5,45)
-        drawMap(randY,randX,survieFoodIco)
+        drawMap(randY,randX,var.survieFoodIco)
     for i in range(0,40):
         randY = random.randint(5,27)
         randX = random.randint(5,45)
-        drawMap(randY,randX,waterIco)
+        drawMap(randY,randX,var.waterIco)
 
 def printBar(y,x,list,icon,color):
     for i in range(len(list)):
-        # print(icon)
-        Position = f"{prefix}{y};{x}{positionSuffix}"
+        Position = f"{var.prefix}{y};{x}{var.positionSuffix}"
         x += 1
-        print(f"{Position}{prefix}{fgPrefix}{color}{styleSuffix}{icon}{prefix}{reset}{styleSuffix}")
+        print(f"{Position}{var.prefix}{var.fgPrefix}{color}{var.styleSuffix}{icon}{var.prefix}{var.reset}{var.styleSuffix}")
 
 def drawMap(posY,posX,symb):
     var.map[posY][posX] = symb
@@ -111,100 +33,103 @@ def printBorderMap():
     for line in range (len(var.map)):
         if(line == 0 or line == 29):
             for i in range(len(var.map[line])):
-                var.map[line][i] = borderMap
+                var.map[line][i] = var.borderMap
         else:
-            var.map[line][0] = borderMap
-            var.map[line][49] = borderMap
+            var.map[line][0] = var.borderMap
+            var.map[line][49] = var.borderMap
 
 def printMount():  
     for x in range(1,49):
-        drawMap(1,x,mountIco)
+        drawMap(1,x,var.mountIco)
     for x in range(1,19):
-        drawMap(2,x,mountIco)
+        drawMap(2,x,var.mountIco)
     for x in range(28,49):
-        drawMap(2,x,mountIco)
+        drawMap(2,x,var.mountIco)
     for y in range(3,29):
-        drawMap(y,1,mountIco)
+        drawMap(y,1,var.mountIco)
     for y in range(3,27):
-        drawMap(y,48,mountIco)
+        drawMap(y,48,var.mountIco)
     
-    
+    drawMap(3,2,var.mountIco)
+    drawMap(4,2,var.mountIco)
+    drawMap(3,3,var.mountIco)
 
-    drawMap(3,2,mountIco)
-    drawMap(4,2,mountIco)
-    drawMap(3,3,mountIco)
-
-    drawMap(3,47,mountIco)
-    drawMap(4,47,mountIco)
-    drawMap(3,46,mountIco)
+    drawMap(3,47,var.mountIco)
+    drawMap(4,47,var.mountIco)
+    drawMap(3,46,var.mountIco)
     
 def printSea():
     for i in range(1,49):
-        drawMap(28,i,waterIco)
-        drawMap(27,i,waterIco)
+        drawMap(28,i,var.waterIco)
+        drawMap(27,i,var.waterIco)
 
 def printRiver():
     for x in range(21,26):
         for y in range(20,27):
-            drawMap(y,x,waterIco)
+            drawMap(y,x,var.waterIco)
     for x in range(20,24):
         for y in range(14,20):
-            drawMap(y,x,waterIco)
+            drawMap(y,x,var.waterIco)
     for x in range(19,22):
         for y in range(8,14):
-            drawMap(y,x,waterIco)
+            drawMap(y,x,var.waterIco)
     for x in range(18,20):
         for y in range(5,8):
-            drawMap(y,x,waterIco)
+            drawMap(y,x,var.waterIco)
     for x in range(18,19):
         for y in range(1,5):
-            drawMap(y,x,waterIco)
+            drawMap(y,x,var.waterIco)
 
 def printSand():
     for i in range(1,49):
-        drawMap(26,i,sandIco)
-        drawMap(25,i,sandIco)
+        drawMap(26,i,var.sandIco)
+        drawMap(25,i,var.sandIco)
     for i in range(30,49):
-        drawMap(24,i,sandIco)
-    # drawMap(25,45,sandIco)
+        drawMap(24,i,var.sandIco)
 
 def printQuests():
     # Première quete
-    drawMap(25,27,questIco)
+    drawMap(25,27,var.questIco)
     # Deuxieme quete
-    drawMap(10,48,questIco)
+    drawMap(10,48,var.questIco)
     # Troisieme quete
-    drawMap(20,10,questIco)
+    drawMap(20,10,var.questIco)
     # Porte finale
-    drawMap(1,20,questIco)
+    drawMap(1,20,var.questIco)
 
 def fondMap():
+    """
+        Affiche pour chaque emplacement de la matrice un emoticon -> florIco
+    """
     for i in range(len(var.map)):
         for j in range(len(var.map[i])):
-            var.map[i][j] = florIco
-
-
-# Position = f"{Prefix}{Y};{X}{Position_Suffix}"
-#      print(f"{Position}{icon} ", end="")
+            var.map[i][j] = var.florIco
 
 def affichageMap(map,poY = 0,poX = 0):
-    
+    """
+        - map -> List
+        - PoY & PoX -> position Y et X du curseur
+
+        Affiche une matrice
+    """
     for poY in range(len(map)):
         for poX in range(len(map[poY])):
             if(poX == 0):
                 print()
-            Position = f"{prefix}{poY};{poX}{positionSuffix}"
+            Position = f"{var.prefix}{poY};{poX}{var.positionSuffix}"
             print(f"{Position}{map[poY][poX]}")    
 
-            # print(map[poY][poX], end ="")
-            
-                # print(f" valeur de remvove = {remove}")
-
 def printPos(Y,X,icon):
-    Position = f"{prefix}{Y};{X}{positionSuffix}"
+    Position = f"{var.prefix}{Y};{X}{var.positionSuffix}"
     print(f"{Position}{icon} ", end="")     
 
 def printHud():
+    """
+        Print du Hud du jeu :
+            - Titre
+            - Barres de survie
+            - Bordures
+    """
     printPos(1,73,var.title)
     printPos(4,55,var.eat)
     printPos(8,55,var.energy)
@@ -213,77 +138,60 @@ def printHud():
     printPos(19,55,var.inventoWater)
     printPos(23,55,var.inventoFood)
 
-    printBar(5,56,eatingList,iconSurvie,red)
-    printBar(9,56,staminaList,iconSurvie,green)
-    printBar(13,56,drinkingList,iconSurvie,blue)
+    printBar(5,56,var.eatingList,var.iconSurvie,var.red)
+    printBar(9,56,var.staminaList,var.iconSurvie,var.green)
+    printBar(13,56,var.drinkingList,var.iconSurvie,var.blue)
 
-    printRessources(21,56,inventoryFoodBack,survieWaterIco)
-    printRessources(21,56,inventoryWater,waterIco)
-    printRessources(25,56,inventoryFoodBack,survieWaterIco)
-    printRessources(25,56,inventoryFood,survieFoodIco)
+    printRessources(21,56,var.inventoryFoodBack,var.emptyIco)
+    printRessources(21,56,var.inventoryWater,var.waterIco)
+    printRessources(25,56,var.inventoryFoodBack,var.emptyIco)
+    printRessources(25,56,var.inventoryFood,var.survieFoodIco)
     
-
-
     for i in range(51,110):
-        printPos(3,i,barrehori)
+        printPos(3,i,var.barrehori)
     for i in range(51,110):
-        printPos(16,i,barrehori)
-
+        printPos(16,i,var.barrehori)
 
     for i in range (1,30):             
-        printPos(i,50,borderIco)
-    # for i in range(50,110):
-    #     printPos(1,i,borderIco)
-    # for i in range(50,110):
-    #     printPos(29,i,borderIco)
-    # for i in range (1,30):             
-    #     printPos(i,110,borderIco)
+        printPos(i,50,var.borderIco)
 
     for i in range (1,160):             
-        printPos(30,i,borderIco)
-    # for i in range (31,36):             
-    #     printPos(i,1,borderIco) 
-    # for i in range (31,36):             
-    #     printPos(i,159,borderIco)
+        printPos(30,i,var.borderIco)
 
     for i in range (31,35):
-        printPos(i,23,barreverti) 
+        printPos(i,23,var.barreverti) 
     for i in range (31,35):
-        printPos(i,54,barreverti)  
+        printPos(i,54,var.barreverti)  
     for i in range (31,35):
-        printPos(i,94,barreverti)  
+        printPos(i,94,var.barreverti)  
     for i in range (1,160):             
-        printPos(34,i,barrehori)
+        printPos(34,i,var.barrehori)
     for i in range (1,160):             
-        printPos(36,i,barrehori)
+        printPos(36,i,var.barrehori)
 
 def delRessource():
-    del eatingList[-1]
-    del drinkingList[-1]
-    del staminaList[-1]
-    del staminaList[-1]
+    """
+        Supprime de la liste de getion des barres de survie un ou plusieurs index
+    """
+    del var.eatingList[-1]
+    del var.drinkingList[-1]
+    del var.staminaList[-1]
+    del var.staminaList[-1]
     
-def spleeping():
-    pass  
-
-
-quest = "start"
 def moveplayer():
-
+    quest = "start"
     startPosY = 25
     startPosX = 45
-    currentPos = sandIco
+    currentPos = var.sandIco
     moveCounter = 0
     func.clearConsole()
     
-    drawMap(startPosY,startPosX,playIco)
-    drawMap(26,46,survieFoodIco)
-    drawMap(22,40,waterIco)
-    drawMap(20,45,mountIco)
+    drawMap(startPosY,startPosX,var.playIco)
+    drawMap(26,46,var.survieFoodIco)
+    drawMap(22,40,var.waterIco)
+    drawMap(20,45,var.mountIco)
     affichageMap(var.map)
     printHud()
-
-    # affichePlayer(startPosY,startPosX)
     
     while quest != "end":
 
@@ -292,11 +200,11 @@ def moveplayer():
         print(moving) 
 
         if moving == "Z":  
-            if len(staminaList) < 5:
+            if len(var.staminaList) < 5:
                 print("Tu dois te reposer !")
-            elif len(eatingList) < 2:
+            elif len(var.eatingList) < 2:
                 print("Tu dois manger !")
-            elif len(drinkingList) < 2:
+            elif len(var.drinkingList) < 2:
                 print("Tu dois boire !")
             else:
                 
@@ -307,11 +215,11 @@ def moveplayer():
                 # hud.printHudTop()
                 
                 drawMap(startPosY +1,startPosX,currentPos)  
-                drawMap(startPosY,startPosX,playIco)
+                drawMap(startPosY,startPosX,var.playIco)
                 affichageMap(var.map)
                 delRessource() 
                 if(moveCounter%2 == 0):
-                    del staminaList[-1]
+                    del var.staminaList[-1]
                 afficheDep = f"Nombre de déplacements : {moveCounter}"
                 printPos(32,26,afficheDep)
                 posXY = f"X = {startPosX} | Y = {startPosY}"
@@ -320,16 +228,14 @@ def moveplayer():
                 printHud()
                 currentPos = oldIco
                 oncase = f"Tu es sur la case {currentPos}"
-                printPos(35,135,oncase)
-
-            
+                printPos(35,135,oncase)          
 
         if moving == "S":
-            if len(staminaList) < 5:
+            if len(var.staminaList) < 5:
                 print("Tu dois te reposer !")
-            elif len(eatingList) < 2:
+            elif len(var.eatingList) < 2:
                 print("Tu dois manger !")
-            elif len(drinkingList) < 2:
+            elif len(var.drinkingList) < 2:
                 print("Tu dois boire !")
             else:
                 oldIco = var.map[startPosY+1][startPosX]
@@ -337,11 +243,11 @@ def moveplayer():
                 moveCounter +=1
                 func.clearConsole()
                 drawMap(startPosY -1,startPosX,currentPos)  
-                drawMap(startPosY,startPosX,playIco)
+                drawMap(startPosY,startPosX,var.playIco)
                 affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
-                    del staminaList[-1]
+                    del var.staminaList[-1]
                 afficheDep = f"Nombre de déplacements : {moveCounter}"
                 printPos(32,26,afficheDep)
                 posXY = f"X = {startPosX} | Y = {startPosY}"
@@ -353,11 +259,11 @@ def moveplayer():
                 printPos(35,135,oncase)
 
         if moving == "Q":
-            if len(staminaList) < 5:
+            if len(var.staminaList) < 5:
                 print("Tu dois te reposer !")
-            elif len(eatingList) < 2:
+            elif len(var.eatingList) < 2:
                 print("Tu dois manger !")
-            elif len(drinkingList) < 2:
+            elif len(var.drinkingList) < 2:
                 print("Tu dois boire !")
             else:
                 oldIco = var.map[startPosY][startPosX-1]
@@ -365,11 +271,11 @@ def moveplayer():
                 moveCounter +=1
                 func.clearConsole()
                 drawMap(startPosY,startPosX +1,currentPos)  
-                drawMap(startPosY,startPosX,playIco)
+                drawMap(startPosY,startPosX,var.playIco)
                 affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
-                    del staminaList[-1]
+                    del var.staminaList[-1]
                 afficheDep = f"Nombre de déplacements : {moveCounter}"
                 printPos(32,26,afficheDep)
                 posXY = f"X = {startPosX} | Y = {startPosY}"
@@ -381,11 +287,11 @@ def moveplayer():
                 printPos(35,135,oncase)
 
         if moving == "D":
-            if len(staminaList) < 5:
+            if len(var.staminaList) < 5:
                 print("Tu dois te reposer !")
-            elif len(eatingList) < 2:
+            elif len(var.eatingList) < 2:
                 print("Tu dois manger !")
-            elif len(drinkingList) < 2:
+            elif len(var.drinkingList) < 2:
                 print("Tu dois boire !")
             else:
                 oldIco = var.map[startPosY][startPosX+1]
@@ -393,11 +299,11 @@ def moveplayer():
                 moveCounter +=1
                 func.clearConsole()
                 drawMap(startPosY,startPosX -1,currentPos)  
-                drawMap(startPosY,startPosX,playIco)
+                drawMap(startPosY,startPosX,var.playIco)
                 affichageMap(var.map) 
                 delRessource() 
                 if(moveCounter%2 == 0):
-                    del staminaList[-1]
+                    del var.staminaList[-1]
                 afficheDep = f"Nombre de déplacements : {moveCounter}"
                 printPos(32,26,afficheDep)
                 posXY = f"X = {startPosX} | Y = {startPosY}"
@@ -409,29 +315,29 @@ def moveplayer():
                 printPos(35,135,oncase)
 
         if moving == "E":           
-            if currentPos == survieFoodIco:
-                if len(inventoryFood) > 9:
+            if currentPos == var.survieFoodIco:
+                if len(var.inventoryFood) > 9:
                     print("Tu n'as plus de places pour cette nourriture")
                 else:
                     func.clearConsole()
                     print("Tu ramasse de la nourriture !")
-                    inventoryFood.extend([0])               
+                    var.inventoryFood.extend([0])               
                      
-                    currentPos = survieWaterIco
+                    currentPos = var.emptyIco
                     affichageMap(var.map)
                     printPos(32,5,posXY)
                     printPos(32,26,afficheDep)
                     printPos(35,135,oncase)
                     printHud()
-            elif currentPos == waterIco:
-                if len(inventoryWater) > 9:
+            elif currentPos == var.waterIco:
+                if len(var.inventoryWater) > 9:
                     print("Tu n'as plus de places pour cette eau")
                 else:
                     func.clearConsole()
                     print("Tu prends de l'eau !")
-                    inventoryWater.extend([0])
+                    var.inventoryWater.extend([0])
                     
-                    currentPos = survieWaterIco
+                    currentPos = var.emptyIco
                     affichageMap(var.map)
                     printHud()
             else:
@@ -439,7 +345,7 @@ def moveplayer():
 
         if moving == "C":
             print("Tu te repose...")
-            lenStamina = len(staminaList)
+            lenStamina = len(var.staminaList)
             reloadStamina = 50 - lenStamina
             countStam = 0
             
@@ -448,51 +354,52 @@ def moveplayer():
                 
                 if countStam % 6 == 0:
                     print(countStam)
-                    del drinkingList[-1]
-                    del drinkingList[-1]
-                    del eatingList[-1]
+                    del var.drinkingList[-1]
+                    del var.drinkingList[-1]
+                    del var.eatingList[-1]
                     func.clearConsole()
                     affichageMap(var.map)
-                if len(eatingList) < 2:
+                    printPos(32,5,posXY)
+                    printPos(32,26,afficheDep)
+                    printPos(35,135,oncase)
+                if len(var.eatingList) < 2:
                     
                     affichageMap(var.map)
                     printHud()
                     print("Tu dois manger !")
                     break
-                elif len(drinkingList) < 2:
+                elif len(var.drinkingList) < 2:
                     affichageMap(var.map)
                     printHud()
                     print("Tu dois boire !")
                     break
                        
-                staminaList.extend([0])
+                var.staminaList.extend([0])
                 
-                printHud()
-             
-                
+                printHud()              
 
         if moving == "B":
-            if inventoryWater == []:
+            if var.inventoryWater == []:
                 print("Tu ne peux pas boire")
             else:
-                if len(drinkingList) > 45:
+                if len(var.drinkingList) > 45:
                     print("Tu n'as pas soif...")
                 else:
-                    del inventoryWater[-1]
-                    drinkingList.extend([0,0,0,0,0])
+                    del var.inventoryWater[-1]
+                    var.drinkingList.extend([0,0,0,0,0])
                     printHud() 
                     print("Tu bois !")
 
         if moving == "M":
             # print("Tu manges !")
-            if inventoryFood == []:
+            if var.inventoryFood == []:
                 print("Tu ne peux pas manger")
             else:
-                if len(eatingList) > 45:
+                if len(var.eatingList) > 45:
                     print("Tu n'as pas faim...")
                 else:
-                    del inventoryFood[-1]
-                    eatingList.extend([0,0,0,0,0])
+                    del var.inventoryFood[-1]
+                    var.eatingList.extend([0,0,0,0,0])
                     printHud() 
                     print("Tu manges !")
 
@@ -507,32 +414,12 @@ def moveplayer():
             else:
                 print("Passe ton chemin")
 
-        
-
-
         commande = f"Déplacement -> Z Q S D ; Rammasser -> E ; Dormir -> C ; Boire -> B ; Manger -> M"
         printPos(35,2,commande)
         cursor = ""
         printPos(37,2,cursor)
         
 
-# def ClearConsole():
-#     """
-#         Clear the console depending on OS
-#     """
-
-#     if "win" in sys.platform.lower():
-#         # for windows
-#         os.system("cls")
-#     elif "linux" in sys.platform.lower():
-#         # for linux
-#         os.system("clear")
-
-
-
-# affichePlayer(posY = 25,posX = 45)
-
-# affichageMap(map)
 fondMap()
 randomSurvie()
 printSea()
@@ -543,4 +430,3 @@ printQuests()
 printBorderMap()
 
 moveplayer()
-# printHud()

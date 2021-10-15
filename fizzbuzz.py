@@ -2,17 +2,15 @@ import json
 import random
 import time
 
-with open("infos.json","r",encoding="utf-8") as playerInfos:
-    player = json.load(playerInfos)
-    playerName = player["playerName"]
+def openFiles():
+    with open("infos.json","r",encoding="utf-8") as playerInfos:
+        player = json.load(playerInfos)
+        # playerName = player["playerName"]
 
-with open("singes.json","r",encoding="utf-8") as singesFile:
-    singes = json.load(singesFile)
-    # for singe in range(len(singes)):
-    #     print(singes[singe]["name"])
+    with open("singes.json","r",encoding="utf-8") as singesFile:
+        singes = json.load(singesFile)
     
-
-
+    return player,singes
 
 
 fizz = "Fizz !"
@@ -21,6 +19,8 @@ fizzBuzz = "FizzBuzz !"
 
 gameStart = True
 
+player, singes = openFiles()
+
 while gameStart:
     
     listPlayers = []
@@ -28,7 +28,7 @@ while gameStart:
     for singe in range(len(singes)):
         listPlayers.append(singes[singe]["name"])
 
-    listPlayers.append(playerName)
+    listPlayers.append(player["name"])
     print(listPlayers)
 
 
@@ -73,12 +73,12 @@ while gameStart:
                     else:
                         print(f"{listPlayers[starter]} dit : {countStart}")
 
-            elif listPlayers[starter] == playerName:
+            elif listPlayers[starter] == player["name"]:
                 if probaPlayer < chance:
                     print(f"{listPlayers[starter]} a perdu !")
                     print(f"Vous avez perdu le FizzBuzz...")
                     listPlayers.pop(starter)
-                    # break
+                    break
                 else:
                     if countStart%3 == 0 and countStart%5 == 0:
                         print(f"{listPlayers[starter]} dit : {fizzBuzz}")

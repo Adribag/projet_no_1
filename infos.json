@@ -1,5 +1,5 @@
 {
-    "playerName" : "Adri",
+    "name" : "Adri",
     "type" : "player",
     "minChance" : 80,
     "maxChance" : 90
