@@ -173,7 +173,7 @@ def printHud():
 
 def delRessource():
     """
-        Supprime de la liste de getion des barres de survie un ou plusieurs index
+        Supprime de la liste de gestion des barres de survie un ou plusieurs index
     """
     del var.eatingList[-1]
     del var.drinkingList[-1]
