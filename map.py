@@ -183,7 +183,7 @@ def delRessource():
 def moveplayer():
     quest = "start"
     startPosY = 25
-    startPosX = 45
+    startPosX = 38
     currentPos = var.sandIco
     moveCounter = 0
     func.clearConsole()
@@ -415,6 +415,29 @@ def moveplayer():
                 nbrM.nbrMyst()
             else:
                 print("Passe ton chemin")
+
+        if(startPosY == 10 and startPosX == 48):
+            print()
+            print("Tu es sur la deuxième quete")
+            question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
+            if(question == "O"):
+                print("Tu lance la quete")
+                import codecesar as cesar
+                cesar.startCodeCesar()
+            else:
+                print("Passe ton chemin")
+
+        if(startPosY == 20 and startPosX == 10):
+            print()
+            print("Tu es sur la deuxième quete")
+            question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
+            if(question == "O"):
+                print("Tu lance la quete")
+                import fizzbuzz as fizz
+                fizz.startFizzBuzz()
+            else:
+                print("Passe ton chemin")
+
 
         commande = f"Déplacement -> Z Q S D ; Rammasser -> E ; Dormir -> C ; Boire -> B ; Manger -> M"
         printPos(35,2,commande)
