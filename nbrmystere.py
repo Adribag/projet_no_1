@@ -1,6 +1,7 @@
 def nbrMyst():
     import random
-
+    import variables as var
+    
     response = -1
 
     def checkLose(countResponse,tryResponse):
@@ -151,7 +152,8 @@ def nbrMyst():
                 break
 
             print("Tu as gagné le premier défi !")
-
+            var.keyOne = True
+            
         startNbrMyst = input("Veux tu rejouer au nombre mystere O -> oui N -> non : ").upper()
         if(startNbrMyst == "O"):
             countResponse = 0

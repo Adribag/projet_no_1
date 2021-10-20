@@ -2,6 +2,7 @@ def startFizzBuzz():
     import json
     import random
     import time
+    import variables as var
 
     def openFiles():
         with open("infos.json","r",encoding="utf-8") as playerInfos:
@@ -109,6 +110,7 @@ def startFizzBuzz():
 
             else:
                 print(f"Le gagnant est {listPlayers[starter]}")
+                var.KeyThree = True
                 break
 
             time.sleep(0.5)

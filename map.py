@@ -1,5 +1,5 @@
 # import random
-
+import json
 import variables as var
 import function as func
 
@@ -319,7 +319,7 @@ def moveplayer():
         if moving == "E":           
             if currentPos == var.survieFoodIco:
                 if len(var.inventoryFood) > 9:
-                    print("Tu n'as plus de places pour cette nourriture")
+                    print("Tu n'as plus de place pour cette nourriture")
                 else:
                     func.clearConsole()
                     print("Tu ramasse de la nourriture !")
@@ -333,7 +333,7 @@ def moveplayer():
                     printHud()
             elif currentPos == var.waterIco:
                 if len(var.inventoryWater) > 9:
-                    print("Tu n'as plus de places pour cette eau")
+                    print("Tu n'as plus de place pour cette eau")
                 else:
                     func.clearConsole()
                     print("Tu prends de l'eau !")
@@ -405,7 +405,7 @@ def moveplayer():
                     printHud() 
                     print("Tu manges !")
 
-        if(startPosY == 25 and startPosX == 27):
+        if(startPosY == 25 and startPosX == 27 and var.keyOne == False):
             print()
             print("Tu es sur la première quete")
             question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
@@ -416,7 +416,7 @@ def moveplayer():
             else:
                 print("Passe ton chemin")
 
-        if(startPosY == 10 and startPosX == 48):
+        if(startPosY == 10 and startPosX == 48 and var.KeyTwo == False):
             print()
             print("Tu es sur la deuxième quete")
             question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
@@ -424,12 +424,13 @@ def moveplayer():
                 print("Tu lance la quete")
                 import codecesar as cesar
                 cesar.startCodeCesar()
+                # var.KeyTwo = True
             else:
                 print("Passe ton chemin")
 
-        if(startPosY == 20 and startPosX == 10):
+        if(startPosY == 20 and startPosX == 10 and var.KeyThree == False):
             print()
-            print("Tu es sur la deuxième quete")
+            print("Tu es sur la troisième quete")
             question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
             if(question == "O"):
                 print("Tu lance la quete")
@@ -438,20 +439,30 @@ def moveplayer():
             else:
                 print("Passe ton chemin")
 
+        if moving == "V":
+            print("Partie sauvegardé")
 
-        commande = f"Déplacement -> Z Q S D ; Rammasser -> E ; Dormir -> C ; Boire -> B ; Manger -> M"
+
+        commande = f"Déplacement -> Z Q S D ; Rammasser -> E ; Dormir -> C ; Boire -> B ; Manger -> M ; Sauvegarder -> V"
         printPos(35,2,commande)
         cursor = ""
         printPos(37,2,cursor)
         
+def startGame():
+    loading = input("Voulez vous charger la dernière sauvegarde ? : O -> oui ; N -> Non").upper()
+    if loading == "O":
+        print("Chargement de la partie !")
 
-fondMap()
-func.randomSurvie(var.map,var.survieFoodIco,var.waterIco)
-printSea()
-printSand()
-printMount()
-printRiver()
-printQuests()
-printBorderMap()
+    else:
+        fondMap()
+        func.randomSurvie(var.map,var.survieFoodIco,var.waterIco)
+        printSea()
+        printSand()
+        printMount()
+        printRiver()
+        printQuests()
+        printBorderMap()
 
-moveplayer()
+        moveplayer()
+
+startGame()

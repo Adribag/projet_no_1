@@ -22,13 +22,13 @@ def randomSurvie(map,food,water):
         - food -> Icone de nourriture
         - water -> Icone d'eau
     """
-    for i in range(0,40):
-        randY = random.randint(5,27)
-        randX = random.randint(5,45)
+    for i in range(0,80):
+        randY = random.randint(3,27)
+        randX = random.randint(3,45)
         drawMap(map,randY,randX,food)
-    for i in range(0,40):
-        randY = random.randint(5,27)
-        randX = random.randint(5,45)
+    for i in range(0,80):
+        randY = random.randint(3,27)
+        randX = random.randint(3,45)
         drawMap(map,randY,randX,water)
 
 

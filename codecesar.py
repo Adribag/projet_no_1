@@ -1,4 +1,5 @@
 def startCodeCesar():
+    
     credo = "beautiful is better than ugly explicit is better than implicit simple is better than complex"
 
     listAlphabet =[
@@ -6,6 +7,7 @@ def startCodeCesar():
         ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
         ]
 
+    import variables as var
     import random
 
     encodeKey = random.randint(0,25)
@@ -30,19 +32,20 @@ def startCodeCesar():
     newCredo = encode()
 
     def decode():
-        decrypt = True
-        while decrypt:
+        while var.KeyTwo == False:
             result = input("Entre la bonne lettre pour décrypter le message... : ")    
             if result == "":        
                 print(newCredo)
             elif result == encodeLetter:
                 print(credo)
                 print("Bravo tu as trouvé la clé de cryptage")
-                decrypt = False
+                var.KeyTwo = True
+                # decrypt = False
+                break
             else:
                 print("Mauvaise Réponse !")
                 print(newCredo)
 
     decode()
-    
+
 startCodeCesar()
