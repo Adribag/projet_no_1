@@ -44,6 +44,7 @@ questIco = "🟪"
 playIco = "🟧"
 emptyIco = "⬜"
 survieFoodIco = "🟥"
+thePlayerName = ""
 
 # Position et Couleurs
 positionSuffix = "H"

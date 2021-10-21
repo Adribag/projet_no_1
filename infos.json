@@ -1,8 +1,1 @@
-{
-    "name" : "Adri",
-    "type" : "player",
-    "minChance" : 80,
-    "maxChance" : 90,
-    "startY" : 25,
-    "startX" : 45
-}
+{"name": "", "type": "player", "minChance": 80, "maxChance": 90, "startY": 25, "startX": 33, "keyOne": false, "keyTwo": false, "keyThree": false}

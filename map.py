@@ -182,8 +182,12 @@ def delRessource():
     
 def moveplayer():
     quest = "start"
-    startPosY = 25
-    startPosX = 38
+
+    with open("infos.json","r",encoding="utf-8") as readInfos:
+        infoPlayer = json.load(readInfos)
+    startPosY = infoPlayer["startY"]
+    startPosX = infoPlayer["startX"]
+
     currentPos = var.sandIco
     moveCounter = 0
     func.clearConsole()
@@ -384,11 +388,13 @@ def moveplayer():
             if var.inventoryWater == []:
                 print("Tu ne peux pas boire")
             else:
-                if len(var.drinkingList) > 45:
+                if len(var.drinkingList) > 40:
                     print("Tu n'as pas soif...")
                 else:
                     del var.inventoryWater[-1]
-                    var.drinkingList.extend([0,0,0,0,0])
+                    var.drinkingList.extend([0,0,0,0,0,0,0,0,0,0])
+                    func.clearConsole()
+                    affichageMap(var.map)
                     printHud() 
                     print("Tu bois !")
 
@@ -397,11 +403,13 @@ def moveplayer():
             if var.inventoryFood == []:
                 print("Tu ne peux pas manger")
             else:
-                if len(var.eatingList) > 45:
+                if len(var.eatingList) > 40:
                     print("Tu n'as pas faim...")
                 else:
                     del var.inventoryFood[-1]
-                    var.eatingList.extend([0,0,0,0,0])
+                    var.eatingList.extend([0,0,0,0,0,0,0,0,0,0])
+                    func.clearConsole()
+                    affichageMap(var.map)
                     printHud() 
                     print("Tu manges !")
 
@@ -439,7 +447,34 @@ def moveplayer():
             else:
                 print("Passe ton chemin")
 
+        if(startPosY == 1 and startPosX == 20):
+            print()
+            print()
+            print()
+            print("Te voila à la fin du jeu... As-tu toutes les clés ?")
+            if(var.keyOne == True and var.KeyTwo == True and var.KeyThree == True):
+                print()
+                print()
+                print("Félicitations tu as remporté les trois défi... Tu as fini le jeu !")
+            else:
+                print()
+                print("Reviens me voir quand tu auras les trois clés en ta possession...")
+
         if moving == "V":
+
+            with open("infos.json","r",encoding="utf-8") as readInfos:
+                infoPlayer = json.load(readInfos)
+            
+            infoPlayer["name"] = var.thePlayerName
+            infoPlayer["startY"] = startPosY
+            infoPlayer["startX"] = startPosX
+            infoPlayer["keyOne"] = var.keyOne
+            infoPlayer["keyTwo"] = var.KeyTwo
+            infoPlayer["keyThree"] = var.KeyThree
+
+            with open("infos.json","w",encoding="utf-8") as uploadInfos:
+                json.dump(infoPlayer,uploadInfos)
+
             print("Partie sauvegardé")
 
 
@@ -452,17 +487,37 @@ def startGame():
     loading = input("Voulez vous charger la dernière sauvegarde ? : O -> oui ; N -> Non").upper()
     if loading == "O":
         print("Chargement de la partie !")
+        
 
     else:
-        fondMap()
-        func.randomSurvie(var.map,var.survieFoodIco,var.waterIco)
-        printSea()
-        printSand()
-        printMount()
-        printRiver()
-        printQuests()
-        printBorderMap()
+        namePlayer = input("Quel est ton nom ?")
 
-        moveplayer()
+        var.thePlayerName = namePlayer
+
+        with open("infos.json","r",encoding="utf-8") as readInfos:
+            infoPlayer = json.load(readInfos)
+        
+        infoPlayer["name"] = namePlayer
+        infoPlayer["startY"] = 25
+        infoPlayer["startX"] = 38
+        infoPlayer["keyOne"] = False
+        infoPlayer["keyTwo"] = False
+        infoPlayer["keyThree"] = False
+
+
+        with open("infos.json","w",encoding="utf-8") as uploadInfos:
+            json.dump(infoPlayer,uploadInfos)
+
+
+    fondMap()
+    func.randomSurvie(var.map,var.survieFoodIco,var.waterIco)
+    printSea()
+    printSand()
+    printMount()
+    printRiver()
+    printQuests()
+    printBorderMap()
+
+    moveplayer()
 
 startGame()
