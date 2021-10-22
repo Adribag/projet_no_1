@@ -520,7 +520,7 @@ def startGame():
 
         with open("infos.json","w",encoding="utf-8") as uploadInfos:
             json.dump(infoPlayer,uploadInfos,indent=4)
-
+    #test
     func.clearConsole()
     fondMap()
     func.randomSurvie(var.map,var.survieFoodIco,var.waterIco)
