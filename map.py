@@ -140,6 +140,8 @@ def printHud():
     printPos(19,55,var.inventoWater)
     printPos(23,55,var.inventoFood)
 
+    
+
     printBar(5,56,var.eatingList,var.iconSurvie,var.red)
     printBar(9,56,var.staminaList,var.iconSurvie,var.green)
     printBar(13,56,var.drinkingList,var.iconSurvie,var.blue)
@@ -185,11 +187,13 @@ def moveplayer():
 
     with open("infos.json","r",encoding="utf-8") as readInfos:
         infoPlayer = json.load(readInfos)
+
     startPosY = infoPlayer["startY"]
     startPosX = infoPlayer["startX"]
-
-    currentPos = var.sandIco
-    moveCounter = 0
+    moveCounter = infoPlayer["moveCounter"]
+    currentPos = infoPlayer["currentPos"]
+    # currentPos = var.sandIco
+    
     func.clearConsole()
     
     func.drawMap(var.map,startPosY,startPosX,var.playIco)
@@ -455,7 +459,7 @@ def moveplayer():
             if(var.keyOne == True and var.KeyTwo == True and var.KeyThree == True):
                 print()
                 print()
-                print("Félicitations tu as remporté les trois défi... Tu as fini le jeu !")
+                print("Félicitations tu as remporté les trois défis... Tu as fini le jeu !")
             else:
                 print()
                 print("Reviens me voir quand tu auras les trois clés en ta possession...")
@@ -464,16 +468,21 @@ def moveplayer():
 
             with open("infos.json","r",encoding="utf-8") as readInfos:
                 infoPlayer = json.load(readInfos)
-            
+
             infoPlayer["name"] = var.thePlayerName
             infoPlayer["startY"] = startPosY
             infoPlayer["startX"] = startPosX
+            infoPlayer["moveCounter"] = moveCounter
+            infoPlayer["currentPos"] = currentPos
             infoPlayer["keyOne"] = var.keyOne
             infoPlayer["keyTwo"] = var.KeyTwo
             infoPlayer["keyThree"] = var.KeyThree
+            infoPlayer["eatingList"] = var.eatingList
+            infoPlayer["staminaList"] = var.staminaList
+            infoPlayer["drinkingList"] = var.drinkingList
 
             with open("infos.json","w",encoding="utf-8") as uploadInfos:
-                json.dump(infoPlayer,uploadInfos)
+                json.dump(infoPlayer,uploadInfos,indent=4)
 
             print("Partie sauvegardé")
 
@@ -484,10 +493,10 @@ def moveplayer():
         printPos(37,2,cursor)
         
 def startGame():
-    loading = input("Voulez vous charger la dernière sauvegarde ? : O -> oui ; N -> Non").upper()
+    loading = input("Voulez vous charger la dernière sauvegarde ? : O -> oui ; N -> Non : ").upper()
     if loading == "O":
         print("Chargement de la partie !")
-        
+
 
     else:
         namePlayer = input("Quel est ton nom ?")
@@ -500,15 +509,19 @@ def startGame():
         infoPlayer["name"] = namePlayer
         infoPlayer["startY"] = 25
         infoPlayer["startX"] = 38
+        infoPlayer["moveCounter"] = 0
+        infoPlayer["currentPos"] = "🟨"
         infoPlayer["keyOne"] = False
         infoPlayer["keyTwo"] = False
         infoPlayer["keyThree"] = False
-
+        infoPlayer["eatingList"] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        infoPlayer["staminaList"] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        infoPlayer["drinkingList"] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 
         with open("infos.json","w",encoding="utf-8") as uploadInfos:
-            json.dump(infoPlayer,uploadInfos)
+            json.dump(infoPlayer,uploadInfos,indent=4)
 
-
+    func.clearConsole()
     fondMap()
     func.randomSurvie(var.map,var.survieFoodIco,var.waterIco)
     printSea()
