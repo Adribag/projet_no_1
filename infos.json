@@ -1,5 +1,5 @@
 {
-    "name": "Adrien",
+    "name": "Adri",
     "type": "player",
     "minChance": 80,
     "maxChance": 90,
@@ -165,5 +165,21 @@
         22,
         23,
         24
+    ],
+    "inventoryFood": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "inventoryWater": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
     ]
 }

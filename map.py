@@ -140,7 +140,12 @@ def printHud():
     printPos(19,55,var.inventoWater)
     printPos(23,55,var.inventoFood)
 
-    
+    # with open("infos.json","r",encoding="utf-8") as readInfos:
+    #     infoPlayer = json.load(readInfos)
+
+    # var.eatingList = infoPlayer["eatingList"]
+    # var.staminaList = infoPlayer["staminaList"]
+    # var.drinkingList = infoPlayer["drinkingList"]
 
     printBar(5,56,var.eatingList,var.iconSurvie,var.red)
     printBar(9,56,var.staminaList,var.iconSurvie,var.green)
@@ -428,7 +433,7 @@ def moveplayer():
             else:
                 print("Passe ton chemin")
 
-        if(startPosY == 10 and startPosX == 48 and var.KeyTwo == False):
+        if(startPosY == 10 and startPosX == 48 and var.keyTwo == False):
             print()
             print("Tu es sur la deuxième quete")
             question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
@@ -440,7 +445,7 @@ def moveplayer():
             else:
                 print("Passe ton chemin")
 
-        if(startPosY == 20 and startPosX == 10 and var.KeyThree == False):
+        if(startPosY == 20 and startPosX == 10 and var.keyThree == False):
             print()
             print("Tu es sur la troisième quete")
             question = input("Veux tu lancer la quete O -> Oui | N -> Non : ").upper()
@@ -456,7 +461,7 @@ def moveplayer():
             print()
             print()
             print("Te voila à la fin du jeu... As-tu toutes les clés ?")
-            if(var.keyOne == True and var.KeyTwo == True and var.KeyThree == True):
+            if(var.keyOne == True and var.keyTwo == True and var.keyThree == True):
                 print()
                 print()
                 print("Félicitations tu as remporté les trois défis... Tu as fini le jeu !")
@@ -475,11 +480,13 @@ def moveplayer():
             infoPlayer["moveCounter"] = moveCounter
             infoPlayer["currentPos"] = currentPos
             infoPlayer["keyOne"] = var.keyOne
-            infoPlayer["keyTwo"] = var.KeyTwo
-            infoPlayer["keyThree"] = var.KeyThree
+            infoPlayer["keyTwo"] = var.keyTwo
+            infoPlayer["keyThree"] = var.keyThree
             infoPlayer["eatingList"] = var.eatingList
             infoPlayer["staminaList"] = var.staminaList
             infoPlayer["drinkingList"] = var.drinkingList
+            infoPlayer["inventoryFood"] = var.inventoryFood
+            infoPlayer["inventoryWater"] = var.inventoryWater
 
             with open("infos.json","w",encoding="utf-8") as uploadInfos:
                 json.dump(infoPlayer,uploadInfos,indent=4)
@@ -517,6 +524,8 @@ def startGame():
         infoPlayer["eatingList"] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
         infoPlayer["staminaList"] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
         infoPlayer["drinkingList"] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        infoPlayer["inventoryFood"] = [0,0,0,0,0]
+        infoPlayer["inventoryWater"] = [0,0,0,0,0,0,0]
 
         with open("infos.json","w",encoding="utf-8") as uploadInfos:
             json.dump(infoPlayer,uploadInfos,indent=4)

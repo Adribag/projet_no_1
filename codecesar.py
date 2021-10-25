@@ -32,14 +32,14 @@ def startCodeCesar():
     newCredo = encode()
 
     def decode():
-        while var.KeyTwo == False:
+        while var.keyTwo == False:
             result = input("Entre la bonne lettre pour décrypter le message... : ")    
             if result == "":        
                 print(newCredo)
             elif result == encodeLetter:
                 print(credo)
                 print("Bravo tu as trouvé la clé de cryptage")
-                var.KeyTwo = True
+                var.keyTwo = True
                 # decrypt = False
                 break
             else:

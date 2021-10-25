@@ -110,7 +110,7 @@ def startFizzBuzz():
 
             else:
                 print(f"Le gagnant est {listPlayers[starter]}")
-                var.KeyThree = True
+                var.keyThree = True
                 break
 
             time.sleep(0.5)

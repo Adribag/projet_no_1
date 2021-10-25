@@ -67,9 +67,14 @@ drinkingList = infoPlayer["drinkingList"]
 # staminaList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 # staminaList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 
-inventoryFood = [0,0,0,0,0]
+# Clés du jeu
+keyOne = infoPlayer["keyOne"]
+keyTwo = infoPlayer["keyTwo"]
+keyThree = infoPlayer["keyThree"]
+
+inventoryFood = infoPlayer["inventoryFood"]
 inventoryFoodBack = [0,1,2,3,4,5,6,7,8,9]
-inventoryWater = [0,0,0,0,0,0,0]
+inventoryWater = infoPlayer["inventoryWater"]
 
 iconSurvie = "■"
 
@@ -77,10 +82,7 @@ iconSurvie = "■"
 barrehori = "═"
 barreverti = "║"
 
-# Clés du jeu
-keyOne = False
-KeyTwo = False
-KeyThree = False
+
 
 # Texte du jeu
 title = "L'île au Python"
