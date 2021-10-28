@@ -202,9 +202,9 @@ def moveplayer():
     func.clearConsole()
     
     func.drawMap(var.map,startPosY,startPosX,var.playIco)
-    func.drawMap(var.map,26,46,var.survieFoodIco)
-    func.drawMap(var.map,22,40,var.waterIco)
-    func.drawMap(var.map,20,45,var.mountIco)
+    # func.drawMap(var.map,26,46,var.survieFoodIco)
+    # func.drawMap(var.map,22,40,var.waterIco)
+    # func.drawMap(var.map,20,45,var.mountIco)
     affichageMap(var.map)
     printHud()
     
@@ -215,6 +215,7 @@ def moveplayer():
         print(moving) 
 
         if moving == "Z":  
+            # Vérification de la survie du joueur
             if len(var.staminaList) < 5:
                 print("Tu dois te reposer !")
             elif len(var.eatingList) < 2:
@@ -222,25 +223,31 @@ def moveplayer():
             elif len(var.drinkingList) < 2:
                 print("Tu dois boire !")
             else:
-                
+            # Si il a assez d'énergie, de faim et soif on continue    
+                # On récupère la case sur laquelle le joueur est positionné
                 oldIco = var.map[startPosY-1][startPosX]
+                # On déplace le joueur d'une case vers le haut
                 startPosY -= 1 
+                # On ajoute + 1 au compteur de déplacements
                 moveCounter += 1
-                func.clearConsole()
-                # hud.printHudTop()
-                
+                # On affiche la map avec la nouvelle positon du joueur
+                func.clearConsole()                
                 func.drawMap(var.map,startPosY +1,startPosX,currentPos)  
                 func.drawMap(var.map,startPosY,startPosX,var.playIco)
                 affichageMap(var.map)
+                # On surpprime des barres de survie les ressources necessaire au déplacement
                 delRessource() 
                 if(moveCounter%2 == 0):
                     del var.staminaList[-1]
+                # On met à jour le compteur de déplacements
                 afficheDep = f"Nombre de déplacements : {moveCounter}"
                 printPos(32,26,afficheDep)
+                # On affiche en X et Y la position du joueur
                 posXY = f"X = {startPosX} | Y = {startPosY}"
                 printPos(32,5,posXY)
-
+                # Affichage du HUD du jeu avec les barres de survie mise à jour
                 printHud()
+                # On affiche la case sur laquelle le joueur est
                 currentPos = oldIco
                 oncase = f"Tu es sur la case {currentPos}"
                 printPos(35,135,oncase)          
